@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VMC | Contattaci</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #a020f0; /* Viola acceso */
+            --secondary: #ff69b4; /* Rosa Neon */
+            --bg-dark: #0a0a0a; /* Nero profondo */
+            --card-bg: #151515; /* Nero meno profondo */
+            --input-bg: #202020;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-image: radial-gradient(circle at 50% 50%, #1a0a2a 0%, #0a0a0a 100%); /* Sfumatura viola scuro */
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        nav {
+            background: rgba(10, 10, 10, 0.9);
+            border-bottom: 3px solid var(--primary);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .logo span { color: var(--secondary); }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--secondary); text-shadow: 0 0 8px var(--secondary); }
+
+        /* Container Modulo */
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(160, 32, 240, 0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 20px rgba(160, 32, 240, 0.1);
+        }
+
+        h1 { 
+            color: var(--secondary); 
+            text-align: center; 
+            text-transform: uppercase; 
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 0px var(--primary);
+        }
+
+        p { text-align: center; color: #888; margin-bottom: 40px; }
+
+        form { display: flex; flex-direction: column; gap: 25px; }
+
+        .form-group { display: flex; flex-direction: column; text-align: left; }
+
+        label { 
+            margin-bottom: 10px; 
+            font-weight: bold; 
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        input, textarea {
+            padding: 15px;
+            background: var(--input-bg);
+            border: 2px solid #333;
+            color: white;
+            font-size: 1rem;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+        }
+
+        /* Bottone Neon */
+        .btn-submit {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+            filter: brightness(1.1);
+        }
+
+        .btn-submit:active { transform: translateY(0); }
+
+        footer { text-align: center; padding: 50px; color: #444; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">V<span>MC</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="staff.html">Staff</a>
+            <a href="regole.html">Regole</a>
+            <a href="contatti.html">Contatti</a>
+            <a href="ban.html">Ban List</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Supporto Player</h1>
+        <p>Invia una segnalazione diretta allo Staff. Risposte entro 24h.</p>
+        
+        <form action="https://formspree.io/f/xgolezyk" method="POST">
+            
+            <div class="form-group">
+                <label><i class="fas fa-user-ninja"></i> Nome Minecraft</label>
+                <input type="text" name="Minecraft-User" placeholder="Il tuo nickname in-game" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-at"></i> Tua Email</label>
+                <input type="email" name="_replyto" placeholder="email@esempio.it" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-exclamation-triangle"></i> Di che cosa hai bisogno?</label>
+                <textarea name="messaggio" rows="5" placeholder="Segnalazione bug, player, o richiesta supporto..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Invia Messaggio</button>
+        </form>
+    </div>
+
+    <footer>&copy; 2026 VMC| Game Amministrazione</footer>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regolamento | VMC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d0216;
+            --purple: #8a2be2;
+            --pink: #ff00ff;
+            --cyan: #00ffff;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--white);
+            margin: 0;
+            background-image: 
+                linear-gradient(rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        nav {
+            padding: 20px;
+            background: rgba(13, 2, 22, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--pink);
+            text-align: center;
+            box-shadow: 0 0 15px var(--pink);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .header-regole {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header-regole h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            background: linear-gradient(to right, #fff, var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+            filter: drop-shadow(0 0 10px rgba(255,0,255,0.5));
+        }
+
+        /* Card Regole stile Cyberpunk */
+        .rule-card {
+            background: var(--glass);
+            border: 1px solid rgba(255, 0, 255, 0.2);
+            border-left: 5px solid var(--pink);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rule-card:hover {
+            transform: translateX(10px);
+            border-color: var(--cyan);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: -5px 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .rule-card h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--cyan);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .rule-card h2 span {
+            color: var(--pink);
+            font-size: 1.5rem;
+        }
+
+        .rule-card p {
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+
+        .warning-footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 46, 46, 0.1);
+            border: 1px dashed #ff2e2e;
+            border-radius: 20px;
+            margin-top: 50px;
+        }
+
+        .highlight { color: var(--pink); font-weight: 700; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="staff.html">Staff</a>
+    <a href="candidature.html">Candidati</a>
+    <a href="contattaci.html">Contattaci</a>
+    <a href="regole.html">Regolamento</a>
+    <a href="ban.html">Ban List</a>
+</nav>
+
+<div class="container">
+    <div class="header-regole">
+        <i class="fas fa-scroll fa-3x" style="color: var(--pink);"></i>
+        <h1>REGOLAMENTO</h1>
+        <p>Seguire queste direttive garantisce un'esperienza ottimale per tutti i cittadini.</p>
+    </div>
+
+    <div class="rule-card">
+        <h2><span>01.</span> NO GRIEFING</h2>
+        <p>È severamente vietato distruggere, modificare o rubare nelle costruzioni degli altri giocatori. Il rispetto per il lavoro altrui è alla base di <span class="highlight">VillaggioMC</span>.</p>
+    </div>
+
+    <div class="rule-card">
+        <h2><span>02.</span> NO MULTIACCOUNT</h2>
+        <p>Ogni giocatore può utilizzare un solo account. L'uso di account secondari per aggirare ban o farmare risorse illegalmente comporterà il ban di entrambi i profili.</p>
+    </div>
+
+    <div class="rule-card">
+        <h2><span>03.</span> NO CHEAT / EXPLOIT</h2>
+        <p>L'uso di hack (X-Ray, KillAura, Fly, ecc.) o lo sfruttamento di bug del gioco per trarne vantaggio è punito con il <span class="highlight">ban permanente</span> senza possibilità di appello.</p>
+    </div>
+
+    <div class="rule-card">
+        <h2><span>04.</span> CHAT & LINGUAGGIO</h2>
+        <p>Mantieni un comportamento civile. Insulti, spam, razzismo o discriminazioni di qualsiasi tipo porteranno a mute immediati o ban temporanei a seconda della gravità.</p>
+    </div>
+
+    <div class="rule-card">
+        <h2><span>05.</span> PUBBLICITÀ NON AUTORIZZATA</h2>
+        <p>È vietato pubblicizzare altri server Minecraft, canali social o siti esterni non affiliati a VillaggioMC senza il permesso esplicito dei Founder.</p>
+    </div>
+
+    <div class="rule-card">
+        <h2><span>06.</span> RISPETTO PER LO STAFF</h2>
+        <p>Le decisioni dello Staff sono finali. Contestazioni pubbliche aggressive non saranno tollerate; usa i canali privati su Discord per eventuali reclami formali.</p>
+    </div>
+
+    <div class="warning-footer">
+        <h3 style="color: #ff2e2e; font-family: 'Orbitron';">ATTENZIONE</h3>
+        <p>La mancata conoscenza del regolamento non esenta dalle sanzioni. Lo staff si riserva il diritto di modificare queste regole in qualsiasi momento per il bene della community.</p>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 40px; opacity: 0.4; font-size: 0.8rem;">
+    &copy; 2026 VillaggioMC - Codice d'Onore dei Cittadini
+</footer>
+
+</body>
+</html>

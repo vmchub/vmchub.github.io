@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff | VMC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0112;
+            --viola: #8a2be2;
+            --rosa: #ff00ff;
+            --bianco: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--bianco);
+            margin: 0;
+            padding-bottom: 80px;
+            background-image: radial-gradient(circle at top right, #1a0233, #0a0112);
+        }
+
+        /* Navbar */
+        nav {
+            padding: 20px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            border-bottom: 2px solid var(--rosa);
+        }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 600; text-transform: uppercase; }
+
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+
+        /* SEZIONI */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 50px 0 30px 0;
+        }
+        .section-title h2 {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, var(--bianco), var(--rosa));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+        .line { height: 2px; flex: 1; background: linear-gradient(90deg, var(--rosa), transparent); opacity: 0.4; }
+
+        /* GRID E CARD */
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 0, 255, 0.1);
+            border-radius: 25px;
+            padding: 30px 15px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--rosa);
+            box-shadow: 0 10px 20px rgba(255, 0, 255, 0.2);
+        }
+        .card img { width: 120px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); margin-bottom: 15px; }
+        .card h3 { margin: 10px 0 5px 0; font-size: 1.2rem; }
+        .card span { color: var(--rosa); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* MODALE (POPUP) */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: #111;
+            padding: 40px;
+            border-radius: 30px;
+            border: 2px solid var(--rosa);
+            z-index: 1001;
+            width: 85%; max-width: 400px;
+            text-align: center;
+        }
+        .modal h2 { color: var(--rosa); font-weight: 900; margin-bottom: 10px; }
+        .modal p { line-height: 1.6; opacity: 0.8; margin-bottom: 20px; }
+        .modal .ruolo-tag { 
+            display: inline-block; 
+            background: var(--rosa); 
+            color: black; 
+            padding: 5px 15px; 
+            border-radius: 10px; 
+            font-weight: 800; 
+            font-size: 0.75rem; 
+        }
+        .btn-chiudi {
+            margin-top: 25px;
+            background: transparent;
+            border: 1px solid var(--rosa);
+            color: var(--rosa);
+            padding: 8px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        .btn-chiudi:hover { background: var(--rosa); color: black; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="staff.html">Staff</a>
+    <a href="candidature.html">Candidati</a>
+    <a href="contattaci.html">Contattaci</a>
+    <a href="regole.html">Regolamento</a>
+    <a href="ban.html">Ban List</a>
+</nav>
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>Leadership</h2>
+        <div class="line"></div>
+    </div>
+    <div class="staff-grid">
+        <div class="card" onclick="apriPop(this)" data-n="Game_Invicible26" data-r="Founder" data-d="Fondatore tecnico. Gestisce ogni singolo ingranaggio del server.">
+            <img src="https://mc-heads.net/body/Game_Invicible26/right">
+            <h3>Game_Invicible26</h3>
+            <span>Founder</span>
+        </div>
+        <div class="card" onclick="apriPop(this)" data-n="MarioGamerSuper" data-r="Owner & Leader" data-d="Proprietario e guida del team. Coordina la community e le decisioni strategiche.">
+            <img src="https://mc-heads.net/body/MarioGamerSuper/right">
+            <h3>MarioGamerSuper</h3>
+            <span>Owner & Leader</span>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>Amministrazione</h2>
+        <div class="line"></div>
+    </div>
+    <div class="staff-grid">
+        <div class="card" onclick="apriPop(this)" data-n="Francy321" data-r="Admin" data-d="Gestore supremo della moderazione e della risoluzione conflitti.">
+            <img src="https://mc-heads.net/body/Francy321/right">
+            <h3>Francy321</h3>
+            <span>Admin</span>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>Sviluppo Discord</h2>
+        <div class="line"></div>
+    </div>
+    <div class="staff-grid">
+        <div class="card" onclick="apriPop(this)" data-n="ManySteak5078" data-r="Discord Dev" data-d="Mago dei bot e dell'integrazione tra Discord e il server Minecraft.">
+            <img src="https://mc-heads.net/body/ManySteak5078/right">
+            <h3>ManySteak5078</h3>
+            <span>Discord Dev</span>
+        </div>
+        <div class="card" onclick="apriPop(this)" data-n="RIP_dna" data-r="Discord Dev" data-d="Esperto di infrastrutture digitali e configurazioni avanzate Discord.">
+            <img src="https://mc-heads.net/body/RIP_dna/right">
+            <h3>RIP_dna</h3>
+            <span>Discord Dev</span>
+        </div>
+        <div class="card" onclick="apriPop(this)" data-n="pasquitos" data-r="Discord Dev" data-d="Esperto in python e Bot.">
+            <img src="https://mc-heads.net/body/RIP_dna/right">
+            <h3>pasquitos</h3>
+            <span>Discord Dev</span>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>Supporto</h2>
+        <div class="line"></div>
+    </div>
+    <div class="staff-grid">
+        <div class="card" onclick="apriPop(this)" data-n="serianwgf" data-r="Sr.Helper" data-d="Sempre presente per i player. Risolve dubbi e mantiene l'ordine in chat.">
+            <img src="https://mc-heads.net/body/serianwgf/right">
+            <h3>serianwgf</h3>
+            <span>Helper</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="overlay" id="overlay" onclick="chiudiPop()"></div>
+<div class="modal" id="modal">
+    <h2 id="p-nome"></h2>
+    <p id="p-desc"></p>
+    <div id="p-ruolo" class="ruolo-tag"></div>
+    <br>
+    <button class="btn-chiudi" onclick="chiudiPop()">CHIUDI</button>
+</div>
+
+<script>
+    function apriPop(el) {
+        const nome = el.getAttribute('data-n');
+        const ruolo = el.getAttribute('data-r');
+        const desc = el.getAttribute('data-d');
+
+        document.getElementById('p-nome').innerText = "(" + nome + ")";
+        document.getElementById('p-desc').innerText = desc;
+        document.getElementById('p-ruolo').innerText = ruolo;
+
+        document.getElementById('modal').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function chiudiPop() {
+        document.getElementById('modal').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

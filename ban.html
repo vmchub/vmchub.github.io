@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban List | VMC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d0216;
+            --purple: #8a2be2;
+            --pink: #ff00ff;
+            --cyan: #00ffff;
+            --red-neon: #ff2e2e;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--white);
+            margin: 0;
+            background-image: 
+                linear-gradient(rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        nav {
+            padding: 20px;
+            background: rgba(13, 2, 22, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--pink);
+            text-align: center;
+            box-shadow: 0 0 15px var(--pink);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        /* Intestazione Ban List */
+        .ban-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            color: var(--red-neon);
+            text-shadow: 0 0 20px rgba(255, 46, 46, 0.6);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .ban-header p {
+            opacity: 0.7;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Pulsante Regolamento */
+        .btn-regole {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: black;
+            padding: 12px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            margin-bottom: 60px;
+        }
+
+        .btn-regole:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--white);
+        }
+
+        /* Tabella Cyberpunk */
+        .ban-table-container {
+            background: var(--glass);
+            border: 1px solid rgba(255, 0, 255, 0.2);
+            border-radius: 30px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 20px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            font-size: 0.9rem;
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 1rem;
+        }
+
+        .player-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .player-cell img {
+            width: 35px;
+            height: 35px;
+            border-radius: 4px;
+            image-rendering: pixelated;
+        }
+
+        .duration-tag {
+            background: rgba(255, 46, 46, 0.15);
+            color: var(--red-neon);
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-weight: 800;
+            border: 1px solid var(--red-neon);
+            text-shadow: 0 0 5px var(--red-neon);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 40px;
+            opacity: 0.5;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="staff.html">Staff</a>
+    <a href="candidature.html">Candidati</a>
+    <a href="contattaci.html">Contattaci</a>
+    <a href="regole.html">Regolamento</a>
+    <a href="ban.html">Ban List</a>
+</nav>
+
+<div class="container">
+    <div class="ban-header">
+        <h1><i class="fas fa-ban"></i> BAN LIST</h1>
+        <p>La trasparenza è importante. Qui trovi la lista degli utenti sanzionati.</p>
+        <p style="font-weight: 700; color: var(--pink);">Vedi il regolamento per non prendere sanzioni!</p>
+        <a href="regolamento.html" class="btn-regole"><i class="fas fa-book"></i> Leggi il Regolamento</a>
+    </div>
+
+    <div class="ban-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Giocatore</th>
+                    <th>Motivo</th>
+                    <th>Staffer</th>
+                    <th>Durata</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="player-cell">
+                            <img src="https://mc-heads.net/avatar/Player_Esempio" alt="Head">
+                            <span>Player Not Found</span>
+                        </div>
+                    </td>
+                    <td>Uso di X-Ray</td>
+                    <td style="color: var(--pink); font-weight: 700;">Game_Invicible26</td>
+                    <td><span class="duration-tag">10 Giorni</span></td>
+                </tr>
+                </tbody>
+                        <tbody>
+                <tr>
+                    <td>
+                        <div class="player-cell">
+                            <img src="https://mc-heads.net/avatar/Player_Esempio" alt="Head">
+                            <span>NotSparky55</span>
+                        </div>
+                    </td>
+                    <td>Ban Evade Multiplo</td>
+                    <td style="color: var(--pink); font-weight: 700;">Game_Invicible26</td>
+                    <td><span class="duration-tag">Perma</span></td>
+                </tr>
+                </tbody>
+                        <tbody>
+                <tr>
+                    <td>
+                        <div class="player-cell">
+                            <img src="https://mc-heads.net/avatar/Player_Esempio" alt="Head">
+                            <span>L1gent_</span>
+                        </div>
+                    </td>
+                    <td>Multi account - PeNotDevil</td>
+                    <td style="color: var(--pink); font-weight: 700;">Game_Invicible26</td>
+                    <td><span class="duration-tag">IP ban</span></td>
+                </tr>
+                </tbody>
+                        <tbody>
+                <tr>
+                    <td>
+                        <div class="player-cell">
+                            <img src="https://mc-heads.net/avatar/Player_Esempio" alt="Head">
+                            <span>PeNotDevil</span>
+                        </div>
+                    </td>
+                    <td>Multiaccount - L1gent_</td>
+                    <td style="color: var(--pink); font-weight: 700;">Game_Invicible26</td>
+                    <td><span class="duration-tag">IP ban</span></td>
+                </tr>
+                </tbody>
+        </table>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 VillaggioMC - Gioca pulito, divertiti con noi!
+</footer>
+
+</body>
+</html>
